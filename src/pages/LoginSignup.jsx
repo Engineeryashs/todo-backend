@@ -3,16 +3,16 @@ const LoginSignup = () => {
     const [isLoginMode, setIsLoginMode] = useState(false);
 
     return (
-        <div className="w-[430px] bg-white rounded-2xl shadow-lg p-8">
+        <div className="w-[430px] bg-white rounded-xl shadow-xl shadow-cyan-500/50 p-8">
             <div className="flex justify-center mb-20">
                 <h2 className="text-3xl font-semibold text-center">{isLoginMode ? "Login" : "Signup"}</h2>
             </div>
             
             
-            <div className="h-12 mb-20 relative flex border border-gray-300 rounded-full overflow-hidden">
-                <button onClick={() => { setIsLoginMode(false) }} className={`w-1/2 cursor-pointer text-lg font-medium transition-all z-10 ${isLoginMode ? "text-white" : "text-black"}`}>Signup</button>
+            <div className="h-12 mb-20 relative flex border border-gray-300 rounded-full">
+                <button onClick={() => { setIsLoginMode(false) }} className={`w-1/2 cursor-pointer text-lg font-medium transition-all z-10 ${isLoginMode ? "text-black" : "text-white"}`}>Signup</button>
                 <button onClick={() => { setIsLoginMode(true) }} className={`w-1/2 cursor-pointer text-lg font-medium transition-all z-10 ${isLoginMode ? "text-white" : "text-black"}`}>Signin</button>
-                <div className={`absolute top-0 h-full w-1/2 rounded-full bg-gradient-to-r from-blue-700 via-cyan-600 to-cyan-200 transition-all ${isLoginMode ? "left-1/2" : "left-0"}`}></div>
+                <div className={`absolute top-0 w-1/2 h-full rounded-full bg-gradient-to-r from-blue-700 via-cyan-600 to-cyan-200 transition-all ${isLoginMode ? "left-1/2" : "left-0"}`}></div>
             </div>
 
             {/*Form Section*/}
@@ -30,11 +30,11 @@ const LoginSignup = () => {
                 {isLoginMode && (<div className="text-right"><p className="text-cyan-600 hover:underline">Forget Password</p></div>)}
 
                 {/*Shared login signup button*/}
-                <button className="w-full p-3 bg-gradient-to-r from-blue-700 via-cyan-600 to-cyan-200 transition-all duration-300">{isLoginMode ? "Login" : "Signup"}</button>
+                <button className="w-full mt-6 p-3 bg-gradient-to-r from-blue-700 via-cyan-600 to-cyan-200 text-white rounded-full text-lg font-medium hover:opacity-90 cursor-pointer transition-all">{isLoginMode ? "Login" : "Signup"}</button>
 
                 {/*Switch Link*/}
-                <p>{isLoginMode ? "Don't have an account " : "Already have an account "}
-                    <a href="#" onClick={(e) => { setIsLoginMode(!isLoginMode) }}>{isLoginMode ? "Signup" : "Login"}</a>
+                <p className="mt-6 text-center text-gray-600">{isLoginMode ? "Don't have an account " : "Already have an account "}
+                    <a className="text-cyan-400 hover:underline" href="#" onClick={(e) => { setIsLoginMode(!isLoginMode) }}>{isLoginMode ? "Signup" : "Login"}</a>
                 </p>
             </form>
         </div>
