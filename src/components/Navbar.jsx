@@ -1,10 +1,15 @@
-export function Navbar(){
-    return(
-        <div className="bg-green-500 flex justify-between h-[60px] border-2 bg-red-500"> 
-            <div className="bg-green-500 h-[50px]">   
-            <img src="/verified.png" alt="" className="h-full w-auto object-contain block border-2 rounded-full my-4"/>
-            </div>  
-             <h1 className="text-2xl decoration-red-100">To-Do List</h1>
-             </div> 
+export function Navbar() {
+    return (
+        <nav className="flex bg-cyan-700 h-10 text-white justify-between content-center py-2">
+            <div>
+                <span className="mx-8 text-xl">iTask</span>
+            </div>
+            <ul className="flex gap-4 mx-8">
+                <li className="cursor-pointer hover:text-cyan-200 hover:font-bold transition-all duration-500">Home</li>
+                <li className="cursor-pointer hover:text-cyan-200 hover:font-bold transition-all duration-500">Your Tasks</li>
+                <li className="cursor-pointer border rounded-full w-[30px] h-[30px] text-center">Hi</li>
+            </ul>
+        </nav>
+
     )
 }

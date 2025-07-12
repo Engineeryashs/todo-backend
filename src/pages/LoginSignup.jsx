@@ -18,7 +18,9 @@ const LoginSignup = () => {
             {/*Form Section*/}
             <form>
                 {/*These is for Signup page*/}
-                {!isLoginMode && (<input type="text" placeholder="Please enter the name" required className="w-full p-3 border-b-2 border-gray-300 focus:border-cyan-500 placeholder-gray-400 outline-none" />)}
+                {!isLoginMode && (<input type="text" placeholder="name" required className="w-full p-3 border-b-2 border-gray-300 focus:border-cyan-500 placeholder-gray-400 outline-none" />)}
+                {/*Shared input field email id and password*/}
+                     {!isLoginMode && (<input type="text" placeholder="last name" required className="w-full p-3 border-b-2 border-gray-300 focus:border-cyan-500 placeholder-gray-400 outline-none" />)}
                 {/*Shared input field email id and password*/}
                 <input type="email" name="email" placeholder="Email address" required className="w-full p-3 border-b-2 border-gray-300 focus:border-cyan-500 placeholder-gray-400 outline-none" />
                 <input type="password" placeholder="Password" required className="w-full p-3 border-b-2 border-gray-300 focus:border-cyan-500 placeholder-gray-400 outline-none" />
