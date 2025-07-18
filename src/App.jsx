@@ -6,12 +6,15 @@ import { Navbar } from './components/Navbar'
 import LoginSignup from './pages/LoginSignup'
 import Dashboard from './pages/Dashboard'
 import { HashRouter, Routes, Route } from 'react-router-dom';
+import ProtectedRoute from './components/ProtectedRoute'
 function App() {
 
   return (
     <HashRouter> {/*Like Car*/}
-      <Routes>   {/*Like engine here in routes component we will have only route component of react-router-dom no any jsx or js etc*/}  
-        <Route path="/dashboard" element={<Dashboard />}></Route>
+      <Routes>   {/*Like engine here in routes component we will have only route component of react-router-dom no any jsx or js etc*/} 
+        <Route path="/protectedRoute" element={<ProtectedRoute/>}>
+        <Route path="dashboard" element={<Dashboard />}/>
+        </Route>
         <Route path="/" element={ <div className='flex bg-cyan-200 flex-col h-screen'>
           <main className='flex h-screen w-[100%] items-center justify-center mx-auto my-4'>
             <LoginSignup/>

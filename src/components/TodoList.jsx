@@ -8,7 +8,7 @@ const TodoList = () => {
       </div>
       <div className='flex-1'>
         <h1 className='text-3xl font-bold text-cyan-400'>hi</h1>
-        <p className='text-lg text-pink-400'>Hello</p>
+        <p className='text-lg text-pink-400'>ss</p>
       </div>
       <div className='flex gap-3'>
         <button className='h-8 w-20 text-center cursor-pointer bg-emerald-400 hover:bg-emerald-600 text-white rounded-lg py-2 text-sm font-medium'>Edit</button>
