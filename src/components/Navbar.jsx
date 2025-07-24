@@ -1,6 +1,6 @@
 export function Navbar() {
     return (
-        <nav className="flex bg-cyan-700 h-10 text-white justify-between content-center py-2">
+        <nav className="flex bg-gray-700 h-10 text-white justify-between content-center py-2">
             <div>
                 <span className="mx-8 text-xl">iTask</span>
             </div>

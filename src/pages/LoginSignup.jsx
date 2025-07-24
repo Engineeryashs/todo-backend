@@ -10,12 +10,10 @@ const LoginSignup = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     let navigate=useNavigate();
     return (
-        <div className="w-[430px] bg-white rounded-xl shadow-xl shadow-cyan-500/50 p-8">
+        <div className="w-[430px] bg-white rounded-xl shadow-xl shadow-gray-500/50 p-8">
             <div className="flex justify-center mb-20">
                 <h2 className="text-3xl font-semibold text-center">{isLoginMode ? "Login" : "Signup"}</h2>
             </div>
-
-
             <div className="h-12 mb-20 relative flex border border-gray-300 rounded-full">
                 <button type="button" onClick={() => { setIsLoginMode(false) }} className={`w-1/2 cursor-pointer text-lg font-medium transition-all z-10 ${isLoginMode ? "text-black" : "text-white"}`}>Signup</button>
                 <button type="button" onClick={() => { setIsLoginMode(true) }} className={`w-1/2 cursor-pointer text-lg font-medium transition-all z-10 ${isLoginMode ? "text-white" : "text-black"}`}>Signin</button>
@@ -58,7 +56,7 @@ const LoginSignup = () => {
                         }
                     )
                         console.log(response.data);
-                         localStorage.setItem("token",response.token);
+                         localStorage.setItem("token",response.data.token);
                           navigate("/protectedRoute/dashboard");
                         } catch (error) {
                             console.log(error);
@@ -74,8 +72,8 @@ const LoginSignup = () => {
                             password
                         })
                         console.log(response.data)
-                           localStorage.setItem(token,response.token);
-                        navigate("/dashboard");
+                           localStorage.setItem("token",response.data.token);
+                        navigate("/protectedRoute/dashboard");
                         } catch (error) {
                             console.log(error);
                         }

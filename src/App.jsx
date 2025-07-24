@@ -15,7 +15,7 @@ function App() {
         <Route path="/protectedRoute" element={<ProtectedRoute/>}>
         <Route path="dashboard" element={<Dashboard />}/>
         </Route>
-        <Route path="/" element={ <div className='flex bg-cyan-200 flex-col h-screen'>
+        <Route path="/" element={ <div className='flex bg-gray-200 flex-col h-screen'>
           <main className='flex h-screen w-[100%] items-center justify-center mx-auto my-4'>
             <LoginSignup/>
           </main>
