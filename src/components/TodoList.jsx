@@ -11,6 +11,18 @@ const TodoList = ({ todos, setTodos }) => {
     setEditTitle(todo.title);
     setEditDescription(todo.description);
   }
+  async function deleteTodo(id){
+    const token=localStorage.getItem("token")
+    try {
+      let response=await axios.delete(`http://localhost:3000/api/vi/remove/${id}`,{
+        headers:{Authorization:`Bearer ${token}`}
+      })
+      console.log(response)
+      setTodos((prevTodos)=>prevTodos.filter((todo)=>todo._id!=id))
+    } catch (error) {
+      console.log(error)
+    }
+  }
   const token = localStorage.getItem("token");
   async function toggleTodo(id) {
     try {
@@ -97,7 +109,10 @@ const TodoList = ({ todos, setTodos }) => {
               </button>}
               
               {//Here we are doing conditional rendreing based on editId
-                editId===todo._id?<button className='h-8 w-20 cursor-pointer rounded-lg bg-red-400 py-2 text-sm font-medium text-white hover:bg-red-600' onClick={()=>{setEditId(null)}}>Cancel</button>:<button className="h-8 w-20 cursor-pointer rounded-lg bg-indigo-400 py-2 text-sm font-medium text-white hover:bg-indigo-600">
+                editId===todo._id?<button className='h-8 w-20 cursor-pointer rounded-lg bg-red-400 py-2 text-sm font-medium text-white hover:bg-red-600' onClick={()=>{setEditId(null)}}>Cancel</button>:
+                <button className="h-8 w-20 cursor-pointer rounded-lg bg-indigo-400 py-2 text-sm font-medium text-white hover:bg-indigo-600" onClick={()=>{
+                  deleteTodo(todo._id)
+                }}>
                 Delete
               </button>
               }
