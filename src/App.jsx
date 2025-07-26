@@ -8,6 +8,7 @@ import Dashboard from './pages/Dashboard'
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import ProtectedRoute from './components/ProtectedRoute'
 import Update from './components/Update'
+import UpdatePassword from './components/UpdatePassword'
 function App() {
 
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/protectedRoute" element={<ProtectedRoute/>}>
         <Route path="dashboard" element={<Dashboard />}/>
             <Route path="update" element={<Update/>}/>
+            <Route path="updatepassword" element={<UpdatePassword/>}/>
         </Route>
       
         <Route path="/" element={ <div className='flex bg-gray-200 flex-col h-screen'>

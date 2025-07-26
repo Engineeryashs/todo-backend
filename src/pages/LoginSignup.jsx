@@ -34,14 +34,12 @@ const LoginSignup = () => {
                 {!isLoginMode && (<input type="password" placeholder="Confirm Password" required className="w-full p-3 border-b-2 border-gray-300 outline-none focus:border-cyan-500 placeholder-gray-400" value={confirmPassword} onChange={(e) => { setConfirmPassword(e.target.value) }} />)}
                 {/*Here while using conditional rendering we can't write if() because its statement and in JSX we can write expresssion only in curled brackets this is for signup page*/}
 
-                {isLoginMode && (<div className="text-right"><p className="text-cyan-600 hover:underline">Forget Password</p></div>)}
-
                 {/*Shared login signup button*/}
                 <button className="w-full mt-6 p-3 bg-gradient-to-r from-blue-700 via-cyan-600 to-cyan-200 text-white rounded-full text-lg font-medium hover:opacity-90 cursor-pointer transition-all" onClick={async (e) => {
                     e.preventDefault();
                     if(!isLoginMode&& (!name||!lastName||!password||!confirmPassword))
                     {
-                        console.log("please fill inputs")
+                        alert("please fill all the inputs")
                         return;
                     }
                     if (!isLoginMode && password !== confirmPassword) {
